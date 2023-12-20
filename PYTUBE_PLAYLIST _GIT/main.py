@@ -59,7 +59,6 @@ def hilo(link):
             return nombre,duracion
         if len(link) != 0:
             p = Playlist(link)
-            print(f'Downloading: {p.title}')
             links = p.video_urls
             for url in links:
                 try: 
@@ -67,7 +66,7 @@ def hilo(link):
                     nombre_limpio = DATOS[0]
                     yt = YouTube(url).streams.get_highest_resolution()
                     yt.download(filename=f"{nombre_limpio}.mp4")
-                    for i in '\/:*?"<>|~,': #ELIMINA CARACTERES NO PERMITIDOS
+                    for i in '\/:*?"<>|~,': #ELIMINA CARACTERES NO PERMITIDOS POR WINDOWS
                         nombre_limpio = nombre_limpio.replace(i,"")
                     Lista_Saved.insert("",'end',iid=url,values=(DATOS[0],f"{DATOS[1]}s"))
                 except(Exception):
