@@ -30,7 +30,7 @@ LINK.focus_set()
 Lista_Saved= ttk.Treeview(columns=("a","b"),selectmode="none",show="headings")
 Lista_Saved.heading('#1', text='TÍTULO', anchor='center')
 Lista_Saved.heading('#2', text='DURACIÓN', anchor='center')
-Lista_Saved.column('a', anchor='left', width=300)
+Lista_Saved.column('a', anchor='w', width=300)
 Lista_Saved.column('b', anchor='center', width=80)
 Lista_Saved.pack()
 def mensaje():
